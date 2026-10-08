@@ -8,11 +8,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Show runner information
+      - name: Start SSH agent
+        uses: webfactory/ssh-agent@v0.9.1
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_SSH_KEY }}
+
+      - name: Test SSH connection
         run: |
-          echo "Hostname:"
-          hostname
-          echo "OS:"
-          uname -a
-          echo "Runner user:"
-          whoami
+          ssh -p 2222 \
+            -o StrictHostKeyChecking=no \
+            deploy@169.58.39.42 \
+            'whoami && hostname'
