@@ -2,9 +2,373 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Marko Jovanović</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Marko Jovanović — Linux System Administrator focused on Linux infrastructure, virtualization, networking and automation.">
+    <meta name="theme-color" content="#0b1120">
+    <title>Marko Jovanović | Linux System Administrator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>TEST1</h1>
+
+<header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+        <a class="brand" href="#home">MJ<span>.</span></a>
+
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#expertise">Expertise</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a class="nav-contact" href="#contact">Contact ↗</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="hero container" id="home">
+        <div class="hero-content">
+            <p class="eyebrow">
+                <span class="status-dot"></span>
+                LINUX · INFRASTRUCTURE · AUTOMATION
+            </p>
+
+            <h1>Building and maintaining
+                <span>reliable IT infrastructure.</span>
+            </h1>
+
+            <p class="hero-description">
+                I'm Marko, a System Administrator based in Belgrade, Serbia.
+                I work with Linux servers, virtualization, networking and
+                the services that keep business infrastructure running.
+            </p>
+
+            <div class="hero-actions">
+                <a class="button button-primary" href="#projects">
+                    Explore my work <span>↘</span>
+                </a>
+                <a class="button button-secondary" href="#contact">
+                    Get in touch
+                </a>
+            </div>
+
+            <div class="hero-meta">
+                <span>Based in Belgrade, Serbia</span>
+                <span class="meta-separator">/</span>
+                <span>System Administrator since 2022</span>
+            </div>
+        </div>
+
+        <aside class="terminal" aria-label="Infrastructure terminal illustration">
+            <div class="terminal-bar">
+                <div class="terminal-dots">
+                    <span></span><span></span><span></span>
+                </div>
+                <span>marko@infrastructure: ~</span>
+            </div>
+
+            <div class="terminal-body">
+                <p><span class="prompt">$</span> whoami</p>
+                <p class="terminal-output">linux-system-administrator</p>
+
+                <p><span class="prompt">$</span> cat focus.txt</p>
+                <p class="terminal-output">
+                    Linux systems<br>
+                    Virtualization<br>
+                    Networking<br>
+                    Automation
+                </p>
+
+                <p><span class="prompt">$</span> systemctl status infrastructure</p>
+                <p class="service-status">
+                    <span class="status-dot"></span> Focused on reliability
+                </p>
+                <p><span class="prompt">$</span> <span class="cursor">_</span></p>
+            </div>
+        </aside>
+    </section>
+
+    <section class="section container" id="about">
+        <div class="section-heading">
+            <p class="eyebrow">01 / ABOUT</p>
+            <h2>Practical experience.<br><span>Infrastructure mindset.</span></h2>
+        </div>
+
+        <div class="about-content">
+            <p class="lead">
+                My background combines long-term IT support experience
+                with hands-on administration of Linux-based infrastructure.
+            </p>
+            <p>
+                I work with servers, network services, virtualization,
+                file sharing, mail and web services, monitoring and backup
+                systems. My approach is practical: understand the problem,
+                identify its root cause and implement a solution that is
+                reliable and maintainable.
+            </p>
+            <p>
+                I am also expanding my skills in automation and CI/CD,
+                applying what I learn through personal projects and
+                automated deployments.
+            </p>
+        </div>
+    </section>
+
+    <section class="section section-alt" id="expertise">
+        <div class="container">
+            <div class="section-heading">
+                <p class="eyebrow">02 / EXPERTISE</p>
+                <h2>The systems I <span>work with.</span></h2>
+                <p class="section-intro">
+                    Technologies used in infrastructure administration,
+                    maintenance and troubleshooting.
+                </p>
+            </div>
+
+            <div class="skills-grid">
+                <article class="skill-card">
+                    <span class="card-number">01</span>
+                    <h3>Linux & Servers</h3>
+                    <p>Server administration, service configuration,
+                       troubleshooting and shell scripting.</p>
+                    <div class="tags">
+                        <span>Linux</span><span>Bash</span><span>Systemd</span>
+                    </div>
+                </article>
+
+                <article class="skill-card">
+                    <span class="card-number">02</span>
+                    <h3>Virtualization</h3>
+                    <p>Virtual machine management and container-based
+                       application deployment.</p>
+                    <div class="tags">
+                        <span>KVM</span><span>Proxmox</span><span>Docker</span>
+                    </div>
+                </article>
+
+                <article class="skill-card">
+                    <span class="card-number">03</span>
+                    <h3>Networking</h3>
+                    <p>Network services, routing, remote access and
+                       network troubleshooting.</p>
+                    <div class="tags">
+                        <span>MikroTik</span><span>TCP/IP</span><span>VPN</span>
+                    </div>
+                </article>
+
+                <article class="skill-card">
+                    <span class="card-number">04</span>
+                    <h3>Infrastructure Services</h3>
+                    <p>Administration of file sharing, web and mail
+                       services and authentication infrastructure.</p>
+                    <div class="tags">
+                        <span>Samba/SMB</span><span>Apache</span><span>Postfix</span>
+                    </div>
+                </article>
+
+                <article class="skill-card">
+                    <span class="card-number">05</span>
+                    <h3>Storage & Monitoring</h3>
+                    <p>Storage management, monitoring, backup and
+                       infrastructure diagnostics.</p>
+                    <div class="tags">
+                        <span>ZFS</span><span>GlusterFS</span><span>Zabbix</span>
+                    </div>
+                </article>
+
+                <article class="skill-card">
+                    <span class="card-number">06</span>
+                    <h3>Security & Automation</h3>
+                    <p>Secure remote access, two-factor authentication
+                       and learning automated delivery workflows.</p>
+                    <div class="tags">
+                        <span>VPN</span><span>2FA</span><span>GitHub Actions</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section container" id="experience">
+        <div class="section-heading">
+            <p class="eyebrow">03 / EXPERIENCE</p>
+            <h2>My professional <span>journey.</span></h2>
+        </div>
+
+        <div class="timeline">
+            <article class="timeline-item">
+                <div class="timeline-date">2022 — PRESENT</div>
+                <div class="timeline-content">
+                    <h3>System Administrator</h3>
+                    <p class="company">Energoprojekt-Entel · Belgrade, Serbia</p>
+                    <p>
+                        Administration and maintenance of Linux server
+                        infrastructure, virtualization, network services,
+                        file sharing, mail and web services, monitoring
+                        and backup systems. Supporting IT infrastructure
+                        across offices in Serbia and abroad.
+                    </p>
+                </div>
+            </article>
+
+            <article class="timeline-item">
+                <div class="timeline-date">2012 — 2022</div>
+                <div class="timeline-content">
+                    <h3>IT Helpdesk Technician</h3>
+                    <p class="company">Energoprojekt-Entel LLC · Oman</p>
+                    <p>
+                        End-user support, hardware and software
+                        troubleshooting, Windows desktop support,
+                        network connectivity and file-sharing services
+                        in an international working environment.
+                    </p>
+                </div>
+            </article>
+
+            <article class="timeline-item">
+                <div class="timeline-date">2005 — 2010</div>
+                <div class="timeline-content">
+                    <h3>IT Helpdesk Technician</h3>
+                    <p class="company">teltech d.o.o. · Serbia</p>
+                    <p>
+                        Technical support, workstation configuration,
+                        software installation, peripheral maintenance
+                        and troubleshooting user IT issues.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="section section-alt" id="projects">
+        <div class="container">
+            <div class="section-heading">
+                <p class="eyebrow">04 / PROJECTS</p>
+                <h2>Learning by <span>building.</span></h2>
+                <p class="section-intro">
+                    Practical projects that help me apply infrastructure
+                    knowledge and develop automation skills.
+                </p>
+            </div>
+
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-topline">
+                        <span class="project-type">PERSONAL PROJECT</span>
+                        <span class="project-icon">01</span>
+                    </div>
+                    <h3>Personal Portfolio & CI/CD</h3>
+                    <p>
+                        A personal website hosted on Linux and deployed
+                        through GitHub Actions. A push to the main branch
+                        triggers an SSH connection to the production server,
+                        where Git pulls the latest changes and updates
+                        the website.
+                    </p>
+                    <div class="tags">
+                        <span>Ubuntu</span><span>Apache</span>
+                        <span>Git</span><span>GitHub Actions</span>
+                    </div>
+                    <a class="text-link"
+                       href="https://github.com/Molderko1/marko-jovanovic-portfolio"
+                       target="_blank" rel="noopener noreferrer">
+                        View source code <span>↗</span>
+                    </a>
+                </article>
+
+                <article class="project-card project-next">
+                    <div class="project-topline">
+                        <span class="project-type">IN PROGRESS</span>
+                        <span class="project-icon">02</span>
+                    </div>
+                    <h3>Infrastructure Automation</h3>
+                    <p>
+                        Expanding practical knowledge of deployment
+                        automation, repeatable configuration and
+                        reliable delivery workflows.
+                    </p>
+                    <div class="tags">
+                        <span>Linux</span><span>Shell</span><span>CI/CD</span>
+                    </div>
+                    <span class="project-note">More details as the project evolves.</span>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section container" id="certifications">
+        <div class="section-heading">
+            <p class="eyebrow">05 / CERTIFICATIONS</p>
+            <h2>Validated <span>knowledge.</span></h2>
+        </div>
+
+        <div class="cert-list">
+            <div class="cert-item">
+                <div>
+                    <h3>Linux Foundation Certified System Administrator</h3>
+                    <p>Linux Foundation</p>
+                </div>
+                <span class="cert-code">LFCS</span>
+            </div>
+            <div class="cert-item">
+                <div>
+                    <h3>MikroTik Certified Routing Engineer</h3>
+                    <p>MikroTik</p>
+                </div>
+                <span class="cert-code">MTCRE</span>
+            </div>
+            <div class="cert-item">
+                <div>
+                    <h3>MikroTik Certified Security Engineer</h3>
+                    <p>MikroTik</p>
+                </div>
+                <span class="cert-code">MTCSE</span>
+            </div>
+            <div class="cert-item">
+                <div>
+                    <h3>MikroTik Certified Traffic Control Engineer</h3>
+                    <p>MikroTik</p>
+                </div>
+                <span class="cert-code">MTCTCE</span>
+            </div>
+            <div class="cert-item">
+                <div>
+                    <h3>MikroTik Certified Network Associate</h3>
+                    <p>MikroTik</p>
+                </div>
+                <span class="cert-code">MTCNA</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container contact-content">
+            <p class="eyebrow">06 / CONTACT</p>
+            <h2>Have an infrastructure<br><span>challenge in mind?</span></h2>
+            <p>
+                Feel free to get in touch about Linux infrastructure,
+                system administration or professional opportunities.
+            </p>
+            <a class="button button-primary"
+               href="mailto:marko@jovanovic.pro">
+                Email me <span>↗</span>
+            </a>
+            <a class="contact-link"
+               href="https://www.linkedin.com/in/marko-jovanovi%C4%87-05802681"
+               target="_blank" rel="noopener noreferrer">
+                Connect on LinkedIn ↗
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <a class="brand" href="#home">MJ<span>.</span></a>
+        <p>Designed and deployed by Marko Jovanović.</p>
+        <p>© <span id="year">2026</span> · Built with HTML & CSS</p>
+    </div>
+</footer>
+
 </body>
 </html>
