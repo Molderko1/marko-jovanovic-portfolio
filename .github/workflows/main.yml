@@ -1,10 +1,13 @@
-name: Runner Test
+name: Deploy website
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
-  test-runner:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -13,9 +16,9 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.DEPLOY_SSH_KEY }}
 
-      - name: Test SSH connection
+      - name: Deploy to production
         run: |
           ssh -p 2222 \
             -o StrictHostKeyChecking=no \
             deploy@169.58.39.42 \
-            'whoami && hostname'
+            'cd /home/deploy/marko-jovanovic-portfolio && git pull --ff-only origin main && cp -r web/. /var/www/marko.jovanovic.pro/'
