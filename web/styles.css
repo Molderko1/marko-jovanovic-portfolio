@@ -524,6 +524,24 @@ a:focus-visible {
     font: 0.85rem monospace;
 }
 
+.cert-aside {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.cert-verify {
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.cert-verify:hover {
+    color: var(--accent);
+}
+
 .contact-section {
     padding-block: 100px;
     background:
