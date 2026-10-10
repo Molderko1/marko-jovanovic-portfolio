@@ -72,7 +72,7 @@ section h2 { margin: 0 0 11px; padding-bottom: 6px; border-bottom: 1px solid var
 .profile-section p { margin: 0; color: #3f4b5e; font-size: var(--fs-lead); line-height: 1.65; }
 
 .cv-columns { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 25px; align-items: start; }
-.main-column section, .side-column section { margin-top: 22px; }
+.main-column section, .side-column section { margin-top: 40px; }
 
 /* Svi h3 naslovi stavki su iste veličine */
 .job h3, .skill-group h3, .education-title { margin: 0; color: var(--ink); font-size: var(--fs-h3); font-weight: 750; line-height: 1.4; }
@@ -83,6 +83,7 @@ section h2 { margin: 0 0 11px; padding-bottom: 6px; border-bottom: 1px solid var
 .company { margin: 3px 0 6px; color: var(--accent); font-size: var(--fs-body); font-weight: 750; }
 .job ul, .compact-list { margin: 0; padding-left: 16px; color: #465267; font-size: var(--fs-body); line-height: 1.55; }
 .job li, .compact-list li { padding-left: 1px; margin: 0 0 3px; }
+.cert-date { color: var(--muted); white-space: nowrap; }
 
 .skill-group { margin: 0 0 12px; break-inside: avoid; }
 .skill-group h3 { margin-bottom: 4px; }
@@ -157,7 +158,7 @@ section h2 { margin: 0 0 11px; padding-bottom: 6px; border-bottom: 1px solid var
     section h2 { margin-bottom: 6px; padding-bottom: 3px; letter-spacing: .3pt; break-after: avoid; }
     .profile-section p { line-height: 1.45; }
     .cv-columns { grid-template-columns: minmax(0, 1.62fr) minmax(0, 1fr); gap: 15px; }
-    .main-column section, .side-column section { margin-top: 12px; }
+    .main-column section, .side-column section { margin-top: 26px; }
     .job { margin-bottom: 10px; break-inside: avoid; }
     .company { margin: 2px 0 4px; }
     .job ul, .compact-list { padding-left: 12px; line-height: 1.35; }
