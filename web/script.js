@@ -4,6 +4,7 @@ const translations = {
         "navSkills": "Veštine",
         "navExperience": "Iskustvo",
         "navProjects": "Projekti",
+        "navCv": "CV",
         "navContact": "Kontakt ↗",
         "heroEyebrow": "LINUX · SISTEMSKA ADMINISTRACIJA · IT INFRASTRUKTURA",
         "heroTitle": "Gradim i održavam <span>pouzdanu IT infrastrukturu.</span>",
@@ -66,6 +67,7 @@ const translations = {
         "contactDescription": "Za profesionalni kontakt, razmenu iskustava ili razgovor o Linux infrastrukturi i sistemskoj administraciji.",
         "contactEmail": "Pošalji email ↗",
         "contactLinkedIn": "LinkedIn ↗",
+        "contactCv": "Moj CV ↗",
         "footerText": "Izgrađeno uz Linux, kafu i radoznalost.",
         "pageTitle": "Marko Jovanović | System Administrator",
         "pageDescription": "Marko Jovanović — System Administrator. Linux infrastruktura, virtuelizacija, mreže i servisi za međunarodnu kompaniju."
@@ -76,6 +78,7 @@ const translations = {
         "navSkills": "Skills",
         "navExperience": "Experience",
         "navProjects": "Projects",
+        "navCv": "CV",
         "navContact": "Contact ↗",
         "heroEyebrow": "LINUX · SYSTEM ADMINISTRATION · IT INFRASTRUCTURE",
         "heroTitle": "Building and maintaining <span>reliable IT infrastructure.</span>",
@@ -138,6 +141,7 @@ const translations = {
         "contactDescription": "For professional contact, sharing experience or a conversation about Linux infrastructure and system administration.",
         "contactEmail": "Send an email ↗",
         "contactLinkedIn": "LinkedIn ↗",
+        "contactCv": "My CV ↗",
         "footerText": "Built with Linux, coffee and curiosity.",
         "pageTitle": "Marko Jovanović | System Administrator",
         "pageDescription": "Marko Jovanović — System Administrator. Linux infrastructure, virtualization, networking and services for an international company."
