@@ -28,4 +28,4 @@ jobs:
           ssh -p 2222 \
             -o StrictHostKeyChecking=yes \
             deploy@169.58.39.42 \
-            'cd /home/deploy/marko-jovanovic-portfolio && git pull --ff-only origin main && rsync -rt --delete web/ /var/www/marko.jovanovic.pro/'
+            'cd /home/deploy/marko-jovanovic-portfolio && git pull --ff-only origin main && rsync -rc --delete web/ /var/www/marko.jovanovic.pro/'
