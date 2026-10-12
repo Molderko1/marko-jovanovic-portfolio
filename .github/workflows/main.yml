@@ -26,6 +26,6 @@ jobs:
       - name: Deploy to production
         run: |
           ssh -p 2222 \
-            -o StrictHostKeyChecking=no \
+            -o StrictHostKeyChecking=yes \
             deploy@169.58.39.42 \
             'cd /home/deploy/marko-jovanovic-portfolio && git pull --ff-only origin main && cp -r web/. /var/www/marko.jovanovic.pro/'
