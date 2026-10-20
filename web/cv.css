@@ -1,0 +1,191 @@
+/* ==========================================================
+   CV — jedinstvena skala veličina slova
+   Menjaj samo vrednosti u :root (ekran) i u @media print (štampa).
+   ========================================================== */
+:root {
+    /* Ekran */
+    --fs-h1: clamp(28px, 3.4vw, 36px);  /* ime */
+    --fs-h2: 13px;                    /* naslovi sekcija */
+    --fs-h3: 13px;                    /* naslovi stavki: pozicija, grupa veština, škola */
+    --fs-lead: 13px;                  /* profesionalni profil */
+    --fs-body: 12px;                  /* liste, veštine, firma, jezici, obrazovanje */
+    --fs-meta: 11px;                  /* period, kontakt linije, footer */
+    --fs-eyebrow: 10px;               /* mala linija iznad imena */
+
+    --ink: #172033;
+    --muted: #596579;
+    --accent: #2563eb;
+    --line: #dce3ed;
+    --paper: #fff;
+    --bg: #eef2f7;
+
+    /* Header sajta — iste boje kao na index.html */
+    --site-bg: rgb(11 17 32 / 92%);
+    --site-border: rgb(38 52 75 / 65%);
+    --site-line: #26344b;
+    --site-text: #edf3fc;
+    --site-muted: #9aa9bf;
+    --site-accent: #62d9f7;
+    --site-accent-dark: #12394b;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    margin: 0;
+    color: var(--ink);
+    background: var(--bg);
+    font: var(--fs-body)/1.5 Inter, "Segoe UI", Roboto, Arial, sans-serif;
+}
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--accent); }
+
+/* ---------- Header sajta (isti kao na index.html) ---------- */
+.site-header {
+    position: sticky; top: 0; z-index: 10;
+    color: var(--site-text);
+    background: var(--site-bg);
+    border-bottom: 1px solid var(--site-border);
+    backdrop-filter: blur(16px);
+}
+.container { width: min(1120px, calc(100% - 48px)); margin: auto; }
+.header-content { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+
+.logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.logo:hover { color: inherit; }
+.logo-mark { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--site-line); border-radius: 8px; color: var(--site-accent); font-weight: 800; }
+.logo-text { font-size: 13px; font-weight: 800; letter-spacing: .04em; }
+
+.main-nav { display: flex; align-items: center; gap: 24px; color: var(--site-muted); font-size: 14.4px; }
+.main-nav a { white-space: nowrap; transition: color 160ms ease; }
+.main-nav a:hover { color: var(--site-accent); }
+.main-nav a[aria-current="page"] { color: var(--site-text); }
+.main-nav a:last-child { color: var(--site-accent); }
+
+.language-switch { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.language-switch button { padding: 7px 9px; border: 1px solid var(--site-line); border-radius: 6px; color: var(--site-muted); background: transparent; font: inherit; font-size: 12.5px; cursor: pointer; transition: color 160ms ease, border-color 160ms ease; }
+.language-switch button:hover { color: var(--site-text); }
+.language-switch button.active { border-color: var(--site-accent); color: var(--site-accent); background: var(--site-accent-dark); }
+.site-header a:focus-visible, .site-header button:focus-visible { outline: 2px solid var(--site-accent); outline-offset: 4px; }
+
+/* ---------- Traka sa dugmetom za štampu (iznad CV lista) ---------- */
+.cv-toolbar { width: min(210mm, 100%); margin: 0 auto 14px; display: flex; justify-content: flex-end; }
+.print-button { min-height: 40px; border: 1px solid var(--accent); border-radius: 8px; padding: 9px 16px; color: #fff; background: var(--accent); font: inherit; font-size: 13px; font-weight: 700; white-space: nowrap; cursor: pointer; transition: background 160ms ease; }
+.print-button:hover { background: #1d4ed8; }
+.print-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* ---------- CV list ---------- */
+.cv-page { padding: 34px 20px 56px; }
+.cv-sheet { width: min(210mm, 100%); min-height: 297mm; margin: 0 auto; padding: 15mm 15mm 11mm; background: var(--paper); box-shadow: 0 18px 60px #16223722; }
+.cv-header { display: flex; align-items: center; justify-content: space-between; gap: 22px; padding-bottom: 18px; border-bottom: 2px solid var(--ink); }
+.identity { min-width: 0; }
+.eyebrow { margin: 8px 0 0; color: var(--ink); font-size: var(--fs-eyebrow); font-weight: 800; letter-spacing: 1.25px; line-height: 1.4; }
+.cv-header h1 { margin: 0; font-size: var(--fs-h1); line-height: 1.05; letter-spacing: -1.7px; }
+
+.contact-line { display: flex; flex-direction: column; align-items: flex-start; gap: 5px; margin-top: 22px; color: var(--muted); font-size: var(--fs-meta); }
+.contact-line a { color: inherit; overflow-wrap: anywhere; }
+.contact-line b { color: var(--ink); font-weight: 700; }
+
+.profile-photo { width: 104px; height: 124px; flex: 0 0 104px; object-fit: cover; object-position: center; border-radius: 8px; background: #e7edf5; }
+
+section { margin-top: 20px; }
+section h2 { margin: 0 0 11px; padding-bottom: 6px; border-bottom: 1px solid var(--line); font-size: var(--fs-h2); font-weight: 800; letter-spacing: .5px; text-transform: uppercase; }
+.profile-section p { margin: 0; color: #3f4b5e; font-size: var(--fs-lead); line-height: 1.65; }
+
+.cv-columns { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 25px; align-items: start; }
+.main-column section, .side-column section { margin-top: 40px; }
+
+/* Svi h3 naslovi stavki su iste veličine */
+.job h3, .skill-group h3, .education-title { margin: 0; color: var(--ink); font-size: var(--fs-h3); font-weight: 750; line-height: 1.4; }
+
+.job { margin: 0 0 17px; break-inside: avoid; }
+.job-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 3px 10px; }
+.period { color: var(--muted); font-size: var(--fs-meta); font-weight: 600; }
+.company { margin: 3px 0 6px; color: var(--accent); font-size: var(--fs-body); font-weight: 750; }
+.job ul, .compact-list { margin: 0; padding-left: 16px; color: #465267; font-size: var(--fs-body); line-height: 1.55; }
+.job li, .compact-list li { padding-left: 1px; margin: 0 0 3px; }
+.cert-date { color: var(--muted); white-space: nowrap; }
+/* Naziv sertifikata je link, ali izgleda kao običan tekst; naznaka tek pri hover-u */
+.cert-link { color: inherit; text-decoration: none; }
+.cert-link:hover, .cert-link:focus-visible { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+
+.skill-group { margin: 0 0 12px; break-inside: avoid; }
+.skill-group h3 { margin-bottom: 4px; }
+.skill-group p { margin: 0; color: #465267; font-size: var(--fs-body); line-height: 1.6; }
+
+.small-copy { margin: 5px 0 0; color: #465267; font-size: var(--fs-body); line-height: 1.55; }
+.language-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 8px; margin-bottom: 4px; font-size: var(--fs-body); }
+.language-row span { color: var(--muted); }
+
+.cv-footer { display: flex; justify-content: space-between; gap: 16px; margin-top: 25px; padding-top: 10px; border-top: 1px solid var(--line); color: var(--muted); font-size: var(--fs-meta); }
+.cv-footer a { color: var(--accent); font-weight: 700; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1000px) {
+    .header-content { flex-wrap: wrap; padding-block: 12px; }
+    .main-nav { order: 3; width: 100%; justify-content: center; flex-wrap: wrap; gap: 8px 20px; }
+}
+@media (max-width: 700px) {
+    :root { --fs-meta: 10.5px; }
+    .container { width: calc(100% - 32px); }
+    .main-nav { justify-content: flex-start; gap: 8px 16px; font-size: 13px; }
+    .cv-toolbar { margin-bottom: 10px; }
+    .cv-page { padding: 14px 8px 24px; }
+    .cv-sheet { padding: 25px 22px; min-height: 0; }
+    .cv-header { align-items: flex-start; gap: 12px; }
+    .cv-header h1 { font-size: 30px; }
+    .profile-photo { width: 78px; height: 94px; flex-basis: 78px; }
+    .cv-columns { grid-template-columns: 1fr; gap: 0; }
+    .main-column section, .side-column section { margin-top: 20px; }
+    .job-heading { display: block; }
+    .period { display: block; margin-top: 2px; }
+}
+@media (max-width: 430px) {
+    :root { --fs-eyebrow: 8.5px; }
+    .logo-text { font-size: 11.5px; }
+    .eyebrow { letter-spacing: .7px; }
+    .cv-header h1 { font-size: 26px; }
+    .cv-header { gap: 8px; }
+    .profile-photo { width: 66px; height: 82px; flex-basis: 66px; }
+}
+
+/* ---------- Štampa (A4) ---------- */
+/* margin 0 sklanja zaglavlje/podnožje koje browser dodaje (datum, naslov, URL).
+   Razmak od ivice papira daje padding na .cv-sheet. */
+@page { size: A4; margin: 0; }
+@media print {
+    :root {
+        --fs-h1: 23pt;
+        --fs-h2: 11pt;
+        --fs-h3: 10pt;
+        --fs-lead: 10pt;
+        --fs-body: 9.5pt;
+        --fs-meta: 8.5pt;
+        --fs-eyebrow: 8pt;
+    }
+    html, body { width: auto; min-width: 0; margin: 0 !important; padding: 0 !important; color: #111827 !important; background: #fff !important; font: var(--fs-body)/1.35 Arial, Helvetica, sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .no-print, .site-header, .language-switch, .print-button, .cv-footer { display: none !important; }
+    .cv-page { margin: 0 !important; padding: 0 !important; }
+    .cv-sheet { width: 100% !important; min-height: 0 !important; margin: 0 !important; padding: 11mm 12mm 12mm !important; box-shadow: none !important; background: #fff !important; }
+    .cv-header { gap: 14px; padding-bottom: 10px; border-bottom: 1.5pt solid #172033; }
+    .eyebrow { margin-top: 5px; letter-spacing: .8pt; }
+    .cv-header h1 { letter-spacing: -.7pt; }
+    .contact-line { gap: 3px; margin-top: 15px; }
+    .contact-line a { color: #374151 !important; }
+    .profile-photo { width: 25mm; height: 30mm; flex-basis: 25mm; border-radius: 2mm; }
+    section { margin-top: 11px; }
+    section h2 { margin-bottom: 6px; padding-bottom: 3px; letter-spacing: .3pt; break-after: avoid; }
+    .profile-section p { line-height: 1.45; }
+    .cv-columns { grid-template-columns: minmax(0, 1.62fr) minmax(0, 1fr); gap: 15px; }
+    .main-column section, .side-column section { margin-top: 26px; }
+    .job { margin-bottom: 10px; break-inside: avoid; }
+    .company { margin: 2px 0 4px; }
+    .job ul, .compact-list { padding-left: 12px; line-height: 1.35; }
+    .job li, .compact-list li { margin-bottom: 1.5px; }
+    .skill-group { margin-bottom: 7px; break-inside: avoid; }
+    .skill-group p, .small-copy, .language-row { line-height: 1.4; }
+    .language-row { margin-bottom: 5px; }
+    a, a:visited { text-decoration: none !important; }
+    h1, h2, h3, p, ul, li { orphans: 3; widows: 3; }
+    .profile-section, .job, .skill-group, .side-column section { break-inside: avoid; }
+}

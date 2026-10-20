@@ -1,0 +1,832 @@
+/* ==========================================================
+   Portfolio — styles.css (index.html)
+   Svaka klasa ovde postoji u HTML-u; nema mrtvih pravila.
+   Redosled: tokeni → osnova → header → hero → sekcije →
+   komponente → kontakt/footer → responsive → reduced motion
+   ========================================================== */
+
+/* ---------- Tokeni ---------- */
+:root {
+    color-scheme: dark;
+
+    --bg: #0b1120;
+    --bg-soft: #10192b;
+    --bg-contact: #0d1626;
+    --surface: #121e32;
+    --surface-card: rgb(18 30 50 / 70%);
+    --border: #26344b;
+    --border-strong: #30425c;
+    --text: #edf3fc;
+    --text-soft: #c4d4e8;
+    --muted: #9aa9bf;
+    --accent: #62d9f7;
+    --accent-hover: #9aeafa;
+    --accent-dark: #12394b;
+    --success: #6ee7b7;
+
+    --max-width: 1120px;
+    --header-height: 76px;
+    --radius-s: 6px;
+    --radius-m: 10px;
+    --radius-l: 12px;
+}
+
+/* ---------- Osnova ---------- */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-height) + 14px);
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+.container {
+    width: min(var(--max-width), calc(100% - 48px));
+    margin-inline: auto;
+}
+
+.eyebrow {
+    margin: 0 0 22px;
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgb(11 17 32 / 92%);
+    border-bottom: 1px solid rgb(38 52 75 / 65%);
+    backdrop-filter: blur(16px);
+}
+
+.header-content {
+    min-height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.logo-mark {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--accent);
+    font-weight: 800;
+}
+
+.logo-text {
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.main-nav a {
+    transition: color 160ms ease;
+}
+
+.main-nav a:hover {
+    color: var(--accent);
+}
+
+.main-nav a:last-child {
+    color: var(--accent);
+}
+
+.language-switch {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.language-switch button {
+    padding: 7px 9px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-s);
+    background: transparent;
+    color: var(--muted);
+    font: inherit;
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition: color 160ms ease, border-color 160ms ease;
+}
+
+.language-switch button:hover {
+    color: var(--text);
+}
+
+.language-switch button.active {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-dark);
+}
+
+/* ---------- Dugmad i linkovi ---------- */
+.button {
+    min-height: 48px;
+    padding: 12px 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    transition: transform 160ms ease, background 160ms ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button-primary {
+    color: #07121d;
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.button-primary:hover {
+    background: var(--accent-hover);
+}
+
+.button-secondary {
+    background: transparent;
+}
+
+.button-secondary:hover {
+    background: var(--surface);
+}
+
+.text-link {
+    display: inline-flex;
+    gap: 10px;
+    margin-top: 26px;
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+a.text-link:hover {
+    color: #b0f1ff;
+}
+
+/* span.text-link (status laboratorijskog projekta) nije link */
+span.text-link {
+    color: var(--muted);
+    font-weight: 600;
+}
+
+/* ---------- Sekcije (opšte) ---------- */
+.section {
+    padding-block: 105px;
+}
+
+.section-soft {
+    background: var(--bg-soft);
+    border-block: 1px solid rgb(38 52 75 / 60%);
+}
+
+.section-heading {
+    max-width: 700px;
+    margin-bottom: 48px;
+}
+
+.section-heading .eyebrow {
+    margin-bottom: 15px;
+}
+
+.section-heading h2,
+.contact-content h2 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.18;
+    letter-spacing: -0.05em;
+}
+
+.section-heading p:not(.eyebrow) {
+    max-width: 570px;
+    margin: 18px 0 0;
+    color: var(--muted);
+}
+
+/* ---------- Hero ---------- */
+/* .hero je i .section — ovo pravilo dolazi posle i prepisuje padding */
+.hero {
+    min-height: 650px;
+    padding-block: 80px 100px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    align-items: center;
+    gap: 72px;
+}
+
+.hero-content {
+    min-width: 0;
+}
+
+.hero h1 {
+    max-width: 720px;
+    margin: 0;
+    font-size: clamp(2.7rem, 5.5vw, 4.6rem);
+    line-height: 1.09;
+    letter-spacing: -0.065em;
+}
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+.hero-description {
+    max-width: 590px;
+    margin: 28px 0;
+    color: var(--muted);
+    font-size: 1.08rem;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    margin-top: 34px;
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background: var(--success);
+    box-shadow: 0 0 12px rgb(110 231 183 / 35%);
+}
+
+/* ---------- Terminal ---------- */
+.terminal-card {
+    overflow: hidden;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-l);
+    background: #0d1728;
+    box-shadow: 0 28px 80px rgb(0 0 0 / 25%);
+    transform: rotate(1deg);
+}
+
+.terminal-topbar {
+    min-height: 46px;
+    padding-inline: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid var(--border);
+    color: var(--muted);
+    font-family: monospace;
+    font-size: 0.73rem;
+}
+
+.terminal-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.terminal-dots span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #52627a;
+}
+
+.terminal-dots span:nth-child(1) { background: #f87171; }
+.terminal-dots span:nth-child(2) { background: #fbbf24; }
+.terminal-dots span:nth-child(3) { background: var(--success); }
+
+.terminal-body {
+    min-height: 300px;
+    padding: 24px;
+    font-family: "SFMono-Regular", Consolas, monospace;
+    font-size: 0.82rem;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.terminal-body p {
+    margin: 0 0 8px;
+}
+
+.terminal-prompt,
+.terminal-success {
+    color: var(--success);
+}
+
+.terminal-output {
+    padding-left: 16px;
+    color: #b6c5db;
+}
+
+.terminal-cursor {
+    color: var(--accent);
+    animation: blink 1.2s steps(2, start) infinite;
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+/* ---------- O meni ---------- */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    align-items: start;
+    gap: 64px;
+}
+
+.about-copy {
+    color: var(--muted);
+}
+
+.about-copy p {
+    margin: 0 0 20px;
+}
+
+.about-copy p:first-child {
+    color: var(--text);
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+.about-facts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.fact-card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-m);
+    background: var(--surface-card);
+}
+
+.fact-number {
+    color: var(--accent);
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.fact-label {
+    color: var(--muted);
+    font-size: 0.82rem;
+    line-height: 1.4;
+}
+
+/* ---------- Kartice (veštine, projekti) ---------- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.skill-card,
+.project-card {
+    padding: 27px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-m);
+    background: var(--surface-card);
+    transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.skill-card:hover,
+.project-card:hover {
+    border-color: #46617e;
+    transform: translateY(-3px);
+}
+
+.skill-card h3,
+.project-card h3 {
+    margin: 19px 0 9px;
+    font-size: 1.15rem;
+}
+
+.skill-card p,
+.project-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.skill-icon {
+    color: var(--accent);
+    font: 0.78rem monospace;
+}
+
+.project-card {
+    padding: 30px;
+}
+
+.project-card h3 {
+    margin-top: 27px;
+    font-size: 1.35rem;
+}
+
+.project-card p {
+    line-height: 1.8;
+}
+
+.project-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.project-tag {
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.project-symbol {
+    color: #6e8099;
+    font: 0.9rem monospace;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 22px;
+}
+
+.project-tech span {
+    padding: 4px 9px;
+    border: 1px solid #2a4059;
+    border-radius: 5px;
+    color: var(--text-soft);
+    background: #142238;
+    font-size: 0.72rem;
+}
+
+/* ---------- Iskustvo (timeline) ---------- */
+.timeline {
+    margin-left: 8px;
+    border-left: 1px solid #31445f;
+}
+
+.timeline-item {
+    position: relative;
+    padding: 0 0 45px 34px;
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: 28px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-item::before {
+    position: absolute;
+    top: 7px;
+    left: -5px;
+    width: 9px;
+    height: 9px;
+    border: 2px solid var(--bg-soft);
+    border-radius: 50%;
+    background: var(--accent);
+    content: "";
+}
+
+.timeline-date {
+    color: var(--accent);
+    font: 0.78rem monospace;
+    letter-spacing: 0.03em;
+}
+
+.timeline-content h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.timeline-company {
+    margin: 4px 0 14px;
+    color: #d2dced;
+    font-size: 0.9rem;
+}
+
+.timeline-content ul {
+    max-width: 670px;
+    margin: 0;
+    padding-left: 18px;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.timeline-content li {
+    margin-bottom: 6px;
+}
+
+.timeline-content li::marker {
+    color: #46617e;
+}
+
+/* ---------- Sertifikati ---------- */
+.cert-list {
+    border-top: 1px solid var(--border);
+}
+
+.cert-item {
+    padding: 22px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.cert-item h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.cert-item p {
+    margin: 4px 0 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.cert-aside {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.cert-code {
+    color: var(--accent);
+    font: 0.85rem monospace;
+}
+
+.cert-verify {
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: color 160ms ease;
+}
+
+.cert-verify:hover {
+    color: var(--accent);
+}
+
+/* ---------- Kontakt ---------- */
+.contact-section {
+    padding-block: 100px;
+    background:
+        radial-gradient(ellipse at 80% 50%, #152b43 0%, transparent 55%),
+        var(--bg-contact);
+    border-top: 1px solid var(--border);
+}
+
+.contact-content {
+    text-align: center;
+}
+
+.contact-content h2 {
+    margin-bottom: 20px;
+}
+
+.contact-content > p:not(.eyebrow) {
+    max-width: 550px;
+    margin: 0 auto 28px;
+    color: var(--muted);
+}
+
+.contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    border-top: 1px solid var(--border);
+}
+
+.footer-content {
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px 20px;
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+/* ==========================================================
+   Responsive
+   ========================================================== */
+@media (max-width: 1000px) {
+    .header-content {
+        flex-wrap: wrap;
+        padding-block: 12px;
+    }
+
+    .main-nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px 20px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding-block: 72px 80px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .terminal-card {
+        max-width: 600px;
+        width: 100%;
+        margin-inline: auto;
+        transform: none;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: calc(100% - 32px);
+    }
+
+    .logo-text {
+        font-size: 0.72rem;
+    }
+
+    .main-nav {
+        justify-content: flex-start;
+        gap: 8px 16px;
+        font-size: 0.82rem;
+    }
+
+    .section {
+        padding-block: 75px;
+    }
+
+    .hero {
+        padding-block: 56px 72px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.35rem, 11vw, 3.4rem);
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-meta {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .terminal-body {
+        padding: 18px;
+        font-size: 0.74rem;
+    }
+
+    .about-copy p:first-child {
+        font-size: 1.15rem;
+    }
+
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card,
+    .project-card {
+        padding: 23px;
+    }
+
+    .cert-item {
+        align-items: flex-start;
+    }
+
+    .cert-item h3 {
+        font-size: 0.92rem;
+    }
+
+    .contact-section {
+        padding-block: 75px;
+    }
+
+    .contact-actions .button {
+        width: 100%;
+    }
+
+    .footer-content {
+        padding-block: 20px;
+        flex-wrap: wrap;
+    }
+}
+
+/* ---------- Smanjeno kretanje ---------- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
