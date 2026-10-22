@@ -200,3 +200,18 @@ try {
 }
 
 setLanguage(savedLanguage);
+
+function markExpiredCertificates() {
+    const now = new Date();
+
+    document.querySelectorAll("[data-expires]").forEach((item) => {
+        const label = item.querySelector(".cert-expired");
+        if (!label) return;
+
+        // Sertifikat važi do kraja navedenog dana.
+        const expires = new Date(`${item.dataset.expires}T23:59:59`);
+        label.hidden = !(expires < now);
+    });
+}
+
+markExpiredCertificates();
